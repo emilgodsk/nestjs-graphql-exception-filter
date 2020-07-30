@@ -27,7 +27,8 @@ export class AppResolver {
 export class App2Resolver {
   @Query(() => Boolean)
   public test2(): boolean {
-    throw new HttpException('test', 400);
+    // Correctly calls the CustomExceptionFilter
+    throw new CustomException();
 
     return true;
   }
